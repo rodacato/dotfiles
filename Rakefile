@@ -18,6 +18,7 @@ task :install => [:submodule_init, :submodules] do
   file_operation(Dir.glob('irb/*')) if want_to_install?('irb/pry configs (more colorful)')
   file_operation(Dir.glob('ruby/*')) if want_to_install?('rubygems config (faster/no docs)')
   file_operation(Dir.glob('ctags/*')) if want_to_install?('ctags config (better js/ruby support)')
+  file_operation(Dir.glob('rails/*')) if want_to_install?('rails configs (useful functions)')
   if want_to_install?('vim configuration (highly recommended)')
     file_operation(Dir.glob('{vim,vimrc}'))
     Rake::Task["install_vundle"].execute
