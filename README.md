@@ -1,19 +1,19 @@
-     _     _           _
-    | |   | |         | |
-    | |___| |_____  __| | ____
-    |_____  (____ |/ _  |/ ___)
-     _____| / ___ ( (_| | |
-    (_______\_____|\____|_|
-
-    # Yet Another Dotfile Repo v1.1
+    # My Yet Another Dotfile Repo v1.1
     # Now with Prezto and Vundle!
 
-    sh -c "`curl -fsSL https://raw.github.com/skwp/dotfiles/master/install.sh`"
+    sh -c "`curl -fsSL https://raw.github.com/rodacato/dotfiles/master/install.sh`"
 
 **Always be sure to run `rake update` after pulling to ensure plugins are updated**
 
 This is a collection of best of breed tools from across the web,
 from scouring other people's dotfile repos, blogs, and projects.
+
+## Changes on my version from the original
+
+  * Restored sparkup plugin
+  * Vimify ad tmux support removed
+  * Adjust font size
+  * Add irbrc and railsrc support
 
 ## What is YADR?
 
@@ -44,13 +44,13 @@ Installation is automated via `rake` and the `yadr` command. To get
 started please run:
 
 ```bash
-sh -c "`curl -fsSL https://raw.github.com/skwp/dotfiles/master/install.sh`"
+sh -c "`curl -fsSL https://raw.github.com/rodacato/dotfiles/master/install.sh`"
 ```
 
 **Note:** YADR will automatically install all of its subcomponents. If you want to be asked
 about each one, use:
 ```bash
-sh -c "`curl -fsSL https://raw.github.com/skwp/dotfiles/master/install.sh`" -s ask
+sh -c "`curl -fsSL https://raw.github.com/rodacato/dotfiles/master/install.sh`" -s ask
 ```
 
 # Additional Installation
@@ -153,7 +153,7 @@ Next time you load your shell, this file will be read and your prompt will be th
 Pry offers a much better out of the box IRB experience with colors, tab completion, and lots of other tricks. You can also use it
 as an actual debugger on MRI 1.9.2+ by installing [pry-debugger](https://github.com/nixme/pry-debugger).
 
-[Learn more about YADR's pry customizations and how to install](https://github.com/skwp/dotfiles/blob/master/README-pry.md)
+[Learn more about YADR's pry customizations and how to install](https://github.com/rodacato/dotfiles/blob/master/README-pry.md)
 
 ### Git Configuration
 
@@ -498,9 +498,3 @@ Yadr is made possible by many awesome people, too many to list :) But here are a
  * Cleanup, auto installer: @[kylewest](https://github.com/kylewest)
  * Switch from oh-my-zsh to Presto: @[JeanMertz](https://github.com/JeanMertz)
  * Vundle migration: @[duhanebel](https://github.com/duhanebel)
-
-
-### For more tips and tricks
-
-Follow my blog: http://yanpritzker.com
-
