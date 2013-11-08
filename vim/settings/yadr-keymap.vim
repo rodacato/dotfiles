@@ -143,6 +143,12 @@ nnoremap <silent> <C-l> <C-w>l
 nnoremap <silent> <C-k> <C-w>k
 nnoremap <silent> <C-j> <C-w>j
 
+"Move between split windows by using the same shortcuts on iterm
+nnoremap <silent> <D-M-Left> <C-w>h
+nnoremap <silent> <D-M-Right> <C-w>l
+nnoremap <silent> <D-M-Up> <C-w>k
+nnoremap <silent> <D-M-Down> <C-w>j
+
 " Zoom in and out of current window with ,gz
 map <silent> ,gz <C-w>o
 
@@ -164,10 +170,10 @@ nnoremap <silent> vv <C-w>v
 nnoremap <silent> ss <C-w>s
 
 " Resize windows with arrow keys
-nnoremap <D-Up> <C-w>+
-nnoremap <D-Down> <C-w>-
-nnoremap <D-Left> <C-w><
-nnoremap <D-Right>  <C-w>>
+nnoremap <D-S-Up> <C-w>+
+nnoremap <D-S-Down> <C-w>-
+nnoremap <D-S-Left> <C-w><
+nnoremap <D-S-Right>  <C-w>>
 
 " create <%= foo %> erb tags using Ctrl-k in edit mode
 imap <silent> <C-K> <%=   %><Esc>3hi
@@ -195,6 +201,13 @@ nmap <silent> ,vr :so %<CR>
 
 " Type ,hl to toggle highlighting on/off, and show current value.
 noremap ,hl :set hlsearch! hlsearch?<CR>
+
+" End and Home keys
+imap <C-a> <esc>^a
+imap <C-e> <esc>$a
+
+" Git blame
+map <leader>g   :Gblame<CR>
 
 " These are very similar keys. Typing 'a will jump to the line in the current
 " file marked with ma. However, `a will jump to the line and column marked
