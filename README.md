@@ -11,32 +11,11 @@ from scouring other people's dotfile repos, blogs, and projects.
 ## Changes on my version from the original
 
   * Add emmet plugin
+  * Added some aliases
+  * Change window navigation shotcuts
   * Vimify ad tmux support removed
   * Adjust font size
   * Add irbrc and railsrc support
-
-## What is YADR?
-
-**YADR is an opinionated dotfile repo that will make your heart sing**
-
-  * OSX is the best OS. MacVim is the best editor. Zsh is the best shell. Pry is the best irb. Solarized is the best color scheme.
-  * Apple-style philosophy: make everything Just Work and Look Good. Don't worry about too many options.
-  * All common commands should be two and three character mnemonic aliases - less keystrokes, RSI reduction
-  * Avoid stressful hand motions, e.g. remap Esc to caps lock key, remap underscore to Alt-k in vim, make window management in vim easy.
-  * Easy to use plugin architecture, no config files to edit.
-  * Pick one tool and use it everywhere: vim-ize everything
-  * Beautiful, easy to read and small vimrc**
-  * No key overrides or custom hackery in vimrc, everything in well factored snippets in .vim/settings**
-  * Much larger list of vim plugins than Janus, specifically geared to Ruby/Rails/Git development.
-  * Optimized support for Solarized color scheme only, everything guaranteed to Look Good. Your eyes will thank you.
-  * All plugins tested with Solarized and custom color maps provided where needed to ensure your eyes will not bleed.
-  * No configuration file to maintain. YADR uses tiny ruby scripts to wrap git submodule maintenance.
-  * Much cleaner vimrc that keps keymaps isolated to a plugin file (not in the main vimrc).
-  * All keymaps and customization in small, easy to maintain files under .vim/settings
-  * More than just vim plugins - great shell aliases, osx, and irb/pry tweaks to make you more productive.
-
-## Screenshot
-![screenshot](http://i.imgur.com/3C1Ze.png)
 
 # Installation
 
@@ -52,15 +31,6 @@ about each one, use:
 ```bash
 sh -c "`curl -fsSL https://raw.github.com/rodacato/dotfiles/master/install.sh`" -s ask
 ```
-
-# Additional Installation
-
- * [Highly recommended: Install iTerm theme](https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized)
- * [Highly recommended: Remap caps-lock to escape with PCKeyboardHack](http://pqrs.org/macosx/keyremap4macbook/pckeyboardhack.html)
-
-The escape key is the single most used key in vim.
-Old keyboards used to have Ctrl where caps lock is today. But it's even better if you put escape there.
-If you're hitting a small target in the corner, you are slowing yourself down considerably, and probably damaging your hands with repetitive strain injuries.
 
 ### Upgrading
 
@@ -149,7 +119,7 @@ Next time you load your shell, this file will be read and your prompt will be th
  * Syntax highlighting as you type commands
  * Lots more!
 
-### [Pry](http://pry.github.com/) 
+### [Pry](http://pry.github.com/)
 Pry offers a much better out of the box IRB experience with colors, tab completion, and lots of other tricks. You can also use it
 as an actual debugger on MRI 1.9.2+ by installing [pry-debugger](https://github.com/nixme/pry-debugger).
 
@@ -280,6 +250,7 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
 #### Window Navigation
 
  * `Ctrl-h,l,j,k` - to move left, right, down, up between windows
+ * `Cmd-Opt-left,right,down,up` - to move left, right, down, up between windows (like iterm)
  * `Q` - Intelligent Window Killer. Close window `wincmd c` if there are multiple windows to same buffer, or kill the buffer `bwipeout` if this is the last window into it.
 
 #### Splits
@@ -361,7 +332,7 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
 #### Coding
 
  * tComment - gcc to comment a line, gcp to comment blocks, nuff said
- * sparkup - div.foo#bar - hit `ctrl-e`, expands into `<div class="foo" id="bar"/>`, and that's just the beginning
+ * emmet - div.foo#bar - hit `ctrl-e,`, expands into `<div class="foo" id="bar"/>`, and that's just the beginning
  * rails.vim - syntax highlighting, gf (goto file) enhancements, and lots more. should be required for any rails dev
  * rake.vim - like rails.vim but for non-rails projects. makes `:Rtags` and other commands just work
  * ruby.vim - lots of general enhancements for ruby dev
@@ -440,7 +411,7 @@ Add a plugin
 
     yav -u https://github.com/airblade/vim-rooter
 
-Delete a plugin 
+Delete a plugin
 
     ydv -u airblade/vim-rooter
 
@@ -471,30 +442,26 @@ These hacks are Lion-centric. May not work for other OS'es. My favorite mods inc
  * QuickCursor - gives you Apple-Shift-E to edit any OSX text field in vim.
 
 
+###  Keybindings
+
+#### Map Modes:
+
+ * :map and :noremap are recursive and non-recursive, works in all modes
+ * :nmap and :nnoremap, works in normal mode
+ * :vmap and :vnoremap, works in visual mode
+ * :imap for make macros(save a command sequence)
+
+#### Key nomenclature
+ * C   Ctrl
+ * S   Shift
+ * D   Command
+ * M   Option
+
 ### Credits
 
-I can't take credit for all of this. The vim files are a combination of
-work by tpope, scrooloose, and many hours of scouring blogs, vimscripts,
-and other places for the cream of the crop of vim awesomeness.
+I can't take credit for all of this. The vim files is base on the work of skwp
 
- * http://ethanschoonover.com/solarized - a scientifically calibrated color scheme
- * https://github.com/astrails/dotvim
- * https://github.com/carlhuda/janus
- * https://github.com/tpope
- * https://github.com/scrooloose
- * https://github.com/kana
- * https://github.com/sorin-ionescu
- * https://github.com/nelstrom
+ * https://github.com/skwp/dotfiles
 
 And everything that's in the modules included in vim/bundle of course.
 Please explore these people's work.
-
-
-### Contributors
-
-Yadr is made possible by many awesome people, too many to list :) But here are a few of the bigger contributors and core committers.
-
- * Initial Version: @[skwp](https://github.com/skwp)
- * Cleanup, auto installer: @[kylewest](https://github.com/kylewest)
- * Switch from oh-my-zsh to Presto: @[JeanMertz](https://github.com/JeanMertz)
- * Vundle migration: @[duhanebel](https://github.com/duhanebel)
