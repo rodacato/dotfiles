@@ -10,7 +10,7 @@ from scouring other people's dotfile repos, blogs, and projects.
 
 ## Changes on my version from the original
 
-  * Restored sparkup plugin
+  * Add emmet plugin
   * Vimify ad tmux support removed
   * Adjust font size
   * Add irbrc and railsrc support
