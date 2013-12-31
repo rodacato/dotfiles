@@ -1,0 +1,1 @@
+. ~/.yadr/scripts/z/z.sh
