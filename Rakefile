@@ -90,13 +90,8 @@ end
 desc "Runs Vundle installer in a clean vim environment"
 task :install_vundle do
   puts "======================================================"
-  puts "Installing vundle."
+  puts "Installing and updating vundles."
   puts "The installer will now proceed to run BundleInstall."
-  puts "Due to a bug, the installer may report some errors"
-  puts "when installing the plugin 'syntastic'. Fortunately"
-  puts "Syntastic will install and work properly despite the"
-  puts "errors so please just ignore them and let's hope for"
-  puts "an update that fixes the problem!"
   puts "======================================================"
 
   puts ""
@@ -105,6 +100,14 @@ task :install_vundle do
     cd $HOME/.yadr
     git clone https://github.com/gmarik/vundle.git #{File.join('vim','bundle', 'vundle')}
   }
+
+  vundle_path = File.join('vim','bundle', 'vundle')
+  unless File.exists?(vundle_path)
+    run %{
+      cd $HOME/.yadr
+      git clone https://github.com/gmarik/vundle.git #{vundle_path}
+    }
+  end
 
   Vundle::update_vundle
 end
@@ -149,7 +152,8 @@ def install_homebrew
   puts "======================================================"
   puts "Installing Homebrew packages...There may be some warnings."
   puts "======================================================"
-  run %{brew install zsh ctags git hub reattach-to-user-namespace the_silver_searcher}
+  run %{brew install zsh ctags git hub tmux reattach-to-user-namespace the_silver_searcher}
+  run %{brew install macvim --custom-icons --override-system-vim --with-lua --with-luajit}
   puts
   puts
 end
@@ -252,7 +256,15 @@ def install_prezto
     puts "Zsh is already configured as your shell of choice. Restart your session to load the new settings"
   else
     puts "Setting zsh as your default shell"
-    run %{ chsh -s /bin/zsh }
+    if File.exists?("/usr/local/bin/zsh")
+      if File.readlines("/private/etc/shells").grep("/usr/local/bin/zsh").empty?
+        puts "Adding zsh to standard shell list"
+        run %{ echo "/usr/local/bin/zsh" | sudo tee -a /private/etc/shells }
+      end
+      run %{ chsh -s /usr/local/bin/zsh }
+    else
+      run %{ chsh -s /bin/zsh }
+    end
   end
 end
 

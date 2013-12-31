@@ -21,17 +21,20 @@ Bundle "gmarik/vundle"
 " Ruby, Rails, Rake...
 Bundle "astashov/vim-ruby-debugger"
 Bundle "ecomba/vim-ruby-refactoring"
-Bundle "skwp/vim-ruby-conque"
 Bundle "tpope/vim-rails.git"
 Bundle "tpope/vim-rake.git"
 Bundle "tpope/vim-rvm.git"
 Bundle "vim-ruby/vim-ruby.git"
-Bundle "vim-scripts/Specky.git"
+Bundle "Keithbsmiley/rspec.vim"
+Bundle "skwp/vim-iterm-rspec"
+Bundle "skwp/vim-spec-finder"
+
 Bundle "ck3g/vim-change-hash-syntax"
 
 " Other languages
 Bundle "briancollins/vim-jst"
 Bundle "pangloss/vim-javascript"
+Bundle "rodjek/vim-puppet"
 
 " Html, Xml, Css, Markdown...
 Bundle "claco/jasmine.vim"
@@ -59,15 +62,18 @@ Bundle "AndrewRadev/splitjoin.vim"
 Bundle "Raimondi/delimitMate"
 Bundle "Shougo/neocomplcache.git"
 Bundle "briandoll/change-inside-surroundings.vim.git"
-Bundle "garbas/vim-snipmate.git"
 Bundle "godlygeek/tabular"
-Bundle "honza/vim-snippets"
 Bundle "skwp/vim-easymotion"
 Bundle "tomtom/tcomment_vim.git"
 Bundle "tpope/vim-bundler"
 Bundle "vim-scripts/camelcasemotion.git"
 Bundle "vim-scripts/matchit.zip.git"
 Bundle "terryma/vim-multiple-cursors"
+
+
+" Tabbable snippets
+Bundle "garbas/vim-snipmate.git"
+Bundle "honza/vim-snippets"
 
 "File Navigation / Project Management
 Bundle "jistr/vim-nerdtree-tabs.git"
@@ -83,6 +89,7 @@ Bundle "vim-scripts/IndexedSearch"
 Bundle "nelstrom/vim-visual-star-search"
 
 " General vim improvements
+Bundle "chrisbra/NrrwRgn"
 Bundle "MarcWeber/vim-addon-mw-utils.git"
 Bundle "bogado/file-line.git"
 Bundle "majutsushi/tagbar.git"
@@ -130,7 +137,9 @@ Bundle "skwp/vim-colors-solarized"
 Bundle "bling/vim-airline.git"
 Bundle "vim-scripts/TagHighlight.git"
 Bundle "bogado/file-line.git"
+Bundle "jby/tmux.vim.git"
 Bundle "morhetz/gruvbox"
+
 
 " Customization
 " The plugins listed in ~/.vim/.vundles.local will be added here to
