@@ -17,6 +17,8 @@ from scouring other people's dotfile repos, blogs, and projects.
   * Adjust font size
   * Add irbrc and railsrc support
 
+## What is YARD?
+
   * YADR takes a curated set of the best of the best in plugins, dotfile repos and ties them all together into a cohesive system.
   * More than 90 vim plugins, all under one roof, working together.
   * Each plugin is researched and configured to be at its best and to work with other plugins. Often times, better keymaps are provided. See `.yadr/vim/settings` and `.yadr/zsh/`for some examples.
