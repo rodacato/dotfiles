@@ -15,6 +15,7 @@ if has("gui_running")
 
   set lines=60
   set columns=190
+  set colorcolumn=100
 
   if has("gui_gtk2")
     set guifont=Inconsolata\ XL\ 12,Inconsolata\ 15,Monaco\ 12

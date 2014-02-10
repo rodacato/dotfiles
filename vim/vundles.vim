@@ -28,7 +28,7 @@ Bundle "vim-ruby/vim-ruby.git"
 Bundle "Keithbsmiley/rspec.vim"
 Bundle "skwp/vim-iterm-rspec"
 Bundle "skwp/vim-spec-finder"
-
+Bundle "akarzim/vim-flog"
 Bundle "ck3g/vim-change-hash-syntax"
 
 " Other languages
@@ -69,7 +69,6 @@ Bundle "tpope/vim-bundler"
 Bundle "vim-scripts/camelcasemotion.git"
 Bundle "vim-scripts/matchit.zip.git"
 Bundle "terryma/vim-multiple-cursors"
-
 
 " Tabbable snippets
 Bundle "garbas/vim-snipmate.git"
