@@ -22,9 +22,10 @@ def add_more_gems(*gem_names_and_vers)
 end
 
 add_more_gems( %w(
-  looksee-1.0.3
-  awesome_print-1.0.2
+  looksee-2.0.0
+  awesome_print-1.2.0
   net-http-spy-0.2.1
+  jazz_hands-0.5.2
 ) )
 #coderay-1.0.6
 #zucker-12.1
