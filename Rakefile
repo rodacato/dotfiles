@@ -134,6 +134,8 @@ def number_of_cores
 end
 
 def run_bundle_config
+  return unless system("which bundle")
+
   bundler_jobs = number_of_cores - 1
   puts "======================================================"
   puts "Configuring Bundlers for parallel gem installation"
@@ -256,12 +258,10 @@ def install_prezto
   puts
   puts "Installing Prezto (ZSH Enhancements)..."
 
-  unless File.exists?(File.join(ENV['ZDOTDIR'] || ENV['HOME'], ".zprezto"))
-    run %{ ln -nfs "$HOME/.yadr/zsh/prezto" "${ZDOTDIR:-$HOME}/.zprezto" }
+  run %{ ln -nfs "$HOME/.yadr/zsh/prezto" "${ZDOTDIR:-$HOME}/.zprezto" }
 
-    # The prezto runcoms are only going to be installed if zprezto has never been installed
-    file_operation(Dir.glob('zsh/prezto/runcoms/z*'), :copy)
-  end
+  # The prezto runcoms are only going to be installed if zprezto has never been installed
+  file_operation(Dir.glob('zsh/prezto/runcoms/z*'), :copy)
 
   puts
   puts "Overriding prezto ~/.zpreztorc with YADR's zpreztorc to enable additional modules..."
