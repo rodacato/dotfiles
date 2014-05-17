@@ -8,7 +8,7 @@ let g:syntastic_auto_jump=0
 let g:syntastic_auto_loc_list=1
 
 "don't care about warnings
-let g:syntastic_quiet_warnings=0
+let g:syntastic_quiet_messages = {}
 
 "highlight errors
 let g:syntastic_enable_highlighting=1
