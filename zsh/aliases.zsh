@@ -170,3 +170,7 @@ alias hide="defaults write com.apple.Finder AppleShowAllFiles -bool false && kil
 # Disable/Enable Spotlight
 alias spotoff="sudo mdutil -a -i off"
 alias spoton="sudo mdutil -a -i on"
+
+alias hpr='hub pull-request'
+alias grb='git recent-branches'
+
