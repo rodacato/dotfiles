@@ -3,6 +3,15 @@
 # Don't change. The following determines where YADR is installed.
 yadr=$HOME/.yadr
 
+# Get operating system
+platform='unknown'
+unamestr=$(uname)
+if [[ $unamestr == 'Linux' ]]; then
+  platform='linux'
+elif [[ $unamestr == 'Darwin' ]]; then
+  platform='darwin'
+fi
+
 # YADR support
 alias yav='yadr vim-add-plugin'
 alias ydv='yadr vim-delete-plugin'
@@ -17,12 +26,19 @@ alias psr='ps aux | grep ruby'
 
 # Moving around
 alias cdb='cd -'
+alias cls='clear;ls'
 
 # Show human friendly numbers and colors
 alias df='df -h'
-alias ll='ls -alGh'
-alias ls='ls -Gh'
 alias du='du -h -d 2'
+
+if [[ $platform == 'linux' ]]; then
+  alias ll='ls -alh --color=auto'
+  alias ls='ls --color=auto'
+elif [[ $platform == 'darwin' ]]; then
+  alias ll='ls -alGh'
+  alias ls='ls -Gh'
+fi
 
 # show me files matching "ls grep"
 alias lsg='ll | grep'
@@ -88,7 +104,7 @@ alias gtr='grb track'
 alias gpl='git pull'
 alias gplr='git pull --rebase'
 alias gps='git push'
-alias gpsh='git push'
+alias gpsh='git push -u origin `git rev-parse --abbrev-ref HEAD`'
 alias gnb='git nb' # new branch aka checkout -b
 alias grs='git reset'
 alias grsh='git reset --hard'
@@ -146,6 +162,7 @@ alias zc='zeus console'
 # Rspec
 alias rs='rspec spec'
 alias sr='spring rspec'
+alias src='spring rails c'
 alias srgm='spring rails g migration'
 alias srdm='spring rake db:migrate'
 alias srdt='spring rake db:migrate'
@@ -174,3 +191,15 @@ alias spoton="sudo mdutil -a -i on"
 alias hpr='hub pull-request'
 alias grb='git recent-branches'
 
+# Finder
+alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+
+alias dbtp='spring rake db:test:prepare'
+alias dbm='spring rake db:migrate'
+alias dbmr='spring rake db:migrate:redo'
+alias dbmd='spring rake db:migrate:down'
+alias dbmu='spring rake db:migrate:up'
+
+# Homebrew
+alias brewu='brew update && brew upgrade && brew cleanup && brew prune && brew doctor'
