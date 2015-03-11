@@ -8,5 +8,5 @@ Bundle "skwp/vim-iterm-rspec"
 Bundle "skwp/vim-spec-finder"
 Bundle "ck3g/vim-change-hash-syntax"
 Bundle "tpope/vim-bundler"
-Bundle "akarzim/vim-flog"
 Bundle "tpope/vim-cucumber"
+Bundle 'ngmy/vim-rubocop'

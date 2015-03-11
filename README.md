@@ -51,11 +51,23 @@ sh -c "`curl -fsSL https://raw.github.com/rodacato/dotfiles/master/install.sh`" 
 
 ## Wait, you're not done! Do this:
 
-* **Install iTerm Solarized Colors** - YADR will install Solarized colorschemes into your iTerm. Go to Profiles => Colors => Load Presets to pick Solarized Dark.
-* [Remap caps-lock to escape with PCKeyboardHack](http://pqrs.org/macosx/keyremap4macbook/pckeyboardhack.html) - The escape key is the single most used key in vim.  Old keyboards used to have Escape where Tab is today. Apple keyboards are the worst with their tiny Esc keys. But all this is fixed by remapping Caps to Escape.  If you're hitting a small target in the corner, you are slowing yourself down considerably, and probably damaging your hands with repetitive strain injuries.
-* Remap your Alfred or Spotlight to `Ctrl-Cmd-Space`, so that you can use `Cmd-Space` to autocomplete in vim. This is much more friendly for your fingers than `Ctrl-n`.
-* Set up a system wide hotkey for iTerm (Keys=>Hotkey). Recommended Cmd-Escape, which is really Cmd-Capslock.
-* In iTerm, uncheck "Use Lion-style full screen" on General; in MacVim, uncheck Prefer native fullscreen under Advanced settings. This will give you fast full screen windows that are switchable without switching to spaces.
+#### Install iTerm Solarized Colors
+YADR will install Solarized colorschemes into your iTerm. Go to Profiles => Colors => Load Presets to pick Solarized Dark.
+
+#### Remap caps-lock to escape with PCKeyboardHack](http://pqrs.org/macosx/keyremap4macbook/pckeyboardhack.html)
+The escape key is the single most used key in vim.  Old keyboards used to have Escape where Tab is today. Apple keyboards are the worst with their tiny Esc keys. But all this is fixed by remapping Caps to Escape.  If you're hitting a small target in the corner, you are slowing yourself down considerably, and probably damaging your hands with repetitive strain injuries.
+
+#### Remap your Alfred or Spotlight to `Ctrl-Cmd-Space`
+This is so that you can use `Cmd-Space` to autocomplete in vim. This is much more friendly for your fingers than `Ctrl-n`.
+
+#### Set up a system wide hotkey for iTerm (Keys=>Hotkey)
+Recommended Cmd-Escape, which is really Cmd-Capslock.
+
+#### In iTerm, uncheck "Use Lion-style full screen" on General
+This will give you fast full screen windows that are switchable without switching to spaces.
+
+#### in MacVim, uncheck Prefer native fullscreen under Advanced settings
+Same as iTerm. The Lion style spaces navigation slows everything down for no reason.
 
 ## If you want to run vim in terminal
 
@@ -68,6 +80,7 @@ sh -c "`curl -fsSL https://raw.github.com/rodacato/dotfiles/master/install.sh`" 
 * If you want to use an alternate colorcheme like Gruvbox, then in your `~/.vimrc.after` do:
 
       let g:yadr_disable_solarized_enhancements = 1
+      colorscheme base16-twilight
 
 ### Upgrading
 
@@ -184,7 +197,6 @@ of plugins above to learn more.
  * `,gd` - Grep def (greps for 'def [function name]') when cursor is over the function name
  * `,gcf` - Grep Current File to find references to the current file
  * `//` - clear the search
- * `,T` - Tag list (list of methods in a class)
  * `,,w` (alias `,<esc>`) or `,,b` (alias `,<shift-esc>`) - EasyMotion, a vimperator style tool that highlights jump-points on the screen and lets you type to get there.
  * `,mc` - mark this word for MultiCursor (like sublime). Use `Ctrl-n` (next), `Ctrl-p` (prev), `Ctrl-x`(skip) to add more cursors, then do normal vim things like edit the word.
  * `gK` - Opens the documentation for the word under the cursor.
@@ -278,7 +290,7 @@ of plugins above to learn more.
 The osx file is a bash script that sets up sensible defaults for devs and power users
 under osx. Read through it before running it. To use:
 
-    ./osx
+    bin/osx
 
 These hacks are Lion-centric. May not work for other OS'es. My favorite mods include:
 
