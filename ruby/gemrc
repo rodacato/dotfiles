@@ -1,11 +1,12 @@
 ---
 :verbose: true
-gem: --no-ri --no-rdoc
+gem: --no-ri --no-rdoc --no-document
 :backtrace: false
 :benchmark: false
 :sources:
 - http://rubygems.org
 - http://gems.rubyforge.org
 - http://gems.github.com
+- https://rodacato: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@rubygems.pkg.github.com/invoy/
 :update_sources: true
 :bulk_threshold: 1000
