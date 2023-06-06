@@ -11,6 +11,8 @@ let g:syntastic_quiet_messages = {'level': 'warnings'}
 " ~/.vimrc.after
 let g:syntastic_javascript_checkers = ['eslint']
 
+let g:syntastic_ruby_checkers = ['rubocop']
+
 " I have no idea why this is not working, as it used to
 " be a part of syntastic code but was apparently removed
 " This will make syntastic find the correct ruby specified by mri

@@ -34,6 +34,7 @@
   ci = commit                       # commit
   amend = commit --amend            # ammend your last commit
   ammend = commit --amend           # ammend your last commit
+  empty = commit --allow-empty      # empty commit
 
   # checkout
   co = checkout                     # checkout
@@ -95,13 +96,14 @@
   pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset
 [mergetool]
   prompt = false
+  keepBackup = false
 [mergetool "mvimdiff"]
   cmd="mvim -c 'Gdiff' $MERGED"     # use fugitive.vim for 3-way merge
   keepbackup=false
 [merge]
   summary = true
   verbosity = 1
-  tool = mvimdiff
+  tool = opendiff
 [apply]
   whitespace = nowarn
 [branch]
@@ -127,3 +129,5 @@
   enabled = true
 [include]
   path = .gitconfig.user
+[pull]
+	rebase = true
