@@ -131,3 +131,5 @@
   path = .gitconfig.user
 [pull]
 	rebase = true
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
